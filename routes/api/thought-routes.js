@@ -7,3 +7,9 @@ const {
   updateThought,
   deleteThought
 } = require('../../controllers/thoughts-controller');
+
+router.route('/').get(getAllThoughts).post(createThought);
+
+router.route('/:thoughtId').get(getThoughtById).put(updateThought).delete(deleteThought);
+
+module.exports = router;
