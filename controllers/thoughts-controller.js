@@ -7,7 +7,10 @@ const thoughtController = {
       .then(dbThoughtData => {
         res.json(dbThoughtData);
       })
-      .catch(err => res.status(400).json(err));
+      .catch(err => {
+        console.log(err)
+        res.status(400).json(err)
+      });
   },
 
   getThoughtById({ params }, res) {
